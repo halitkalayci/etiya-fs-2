@@ -15,10 +15,15 @@ export class AppComponent {
   address: string = '';
   toDoList: string[] = [];
   toDo: string = '';
+  cartItems: number = 0;
 
   addToDo() {
     this.toDoList.push(this.toDo);
     this.toDo = '';
+  }
+
+  increase() {
+    this.cartItems++;
   }
 
   removeFromList(toDo: string) {

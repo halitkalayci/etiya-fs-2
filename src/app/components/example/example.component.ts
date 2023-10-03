@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-example',
@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ExampleComponent {
   @Input() // => bu comp.'i çağıran complardan gönderilecek
   title: string = 'Ürün Başlığı';
+
+  @Output()
+  onBtnPress = new EventEmitter();
 }
