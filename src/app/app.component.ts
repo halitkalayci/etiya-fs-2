@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'etiya-fs-2';
+  private title2 = 'etiya-fs-2'; // html tarafından dahil erişilemez
+  students = ['Halit', 'Ozan', 'Murat', 'Musa', 'Merve', 'Emine'];
 }

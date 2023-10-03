@@ -1,6 +1,22 @@
+<hr />
+<h3>TS / HTML Bağlantısı ve Directiveler</h3>
 <p>Etiya</p>
 <!-- HTML içerisinde TS kodu execute etmemiz gerektiğinde {{ ts_kodu }} -->
 <p>{{ 1 + 1 }}</p>
 <p>1+1</p>
 
 <p>{{ title }}</p>
+
+<ul>
+  <li *ngFor="let student of students">
+    {{ student }}
+  </li>
+</ul>
+<!-- *ngFor => elementi içerisinde döndüğü kadar render eden direktif -->
+<!-- for(Student student:students) { student } -->
+
+<p *ngIf="students.length > 5">Öğrenci sayısı 5'ten büyük.</p>
+<!-- Conditional Rendering -->
+<!-- *ngIf => elementin render edilip edilmemsini bir koşula bağlayan direktif  -->
+
+<hr />
