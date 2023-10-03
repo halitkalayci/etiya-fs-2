@@ -8,10 +8,28 @@ import { Component } from '@angular/core';
   //styles: ['h3 {color:red}'], // ilgili componentin stilleri
 })
 export class AppComponent {
-  title = 'etiya-fs-2';
   private title2 = 'etiya-fs-2'; // html tarafından dahil erişilemez
+  title = 'etiya-fs-2';
   students = ['Halit', 'Ozan', 'Murat', 'Musa', 'Merve', 'Emine'];
   name: string = '1234';
+  address: string = '';
+  toDoList: string[] = [];
+  toDo: string = '';
+
+  addToDo() {
+    this.toDoList.push(this.toDo);
+    this.toDo = '';
+  }
+
+  removeFromList(toDo: string) {
+    // js'de listenen eleman kaldırmak
+    // listeyi filtrelemek
+
+    this.toDoList = this.toDoList.filter((value) => value != toDo);
+
+    // [a,b,c]
+    // c => [a,b]
+  }
 
   changeName(event: any) {
     let newValue = event.target.value;
@@ -20,5 +38,11 @@ export class AppComponent {
 
   changeNameBtn() {
     this.name = 'Butondan değiştirildi';
+    this.address = 'Ankara';
   }
+
+  // To-Do Listesi değişkeni
+  // to-Do string değişkeni (two way data binding)
+  // add fonksiyonu toDo stringini listeye eklemeli
+  // to-Do stringi boş stringe eşitlenmeli
 }
