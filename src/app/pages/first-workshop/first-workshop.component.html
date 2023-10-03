@@ -1,0 +1,72 @@
+<hr />
+<h3>TS / HTML Bağlantısı ve Directiveler</h3>
+<p>Etiya</p>
+<!-- HTML içerisinde TS kodu execute etmemiz gerektiğinde {{ ts_kodu }} -->
+<p>{{ 1 + 1 }}</p>
+<p>1+1</p>
+
+<p>{{ title }}</p>
+
+<ul>
+  <li *ngFor="let student of students">
+    {{ student }}
+  </li>
+</ul>
+<!-- *ngFor => elementi içerisinde döndüğü kadar render eden direktif -->
+<!-- for(Student student:students) { student } -->
+
+<p *ngIf="students.length > 5">Öğrenci sayısı 5'ten büyük.</p>
+<!-- Conditional Rendering -->
+<!-- *ngIf => elementin render edilip edilmemsini bir koşula bağlayan direktif  -->
+
+<hr />
+
+<h3>Two Way Data Binding</h3>
+
+<label>İsim: </label>
+<!-- [] => angular attributes -->
+<!-- () => angular events -->
+<!-- $event => angularda yapılan işlemin detaylarını içeren rezerve parametre -->
+<input type="text" [value]="name" (keyup)="changeName($event)" />
+<!-- change => inputun değeri değişti ve kullanıcı inputu terketti -->
+<!-- keyup => input içerisinde bir klavye tuşuna basıldı -->
+<p>Şuanki isim değeri: {{ name }}</p>
+
+<button (click)="changeNameBtn()">Değeri Değiştir</button>
+
+<hr />
+
+<h3>Two Way Data Binding w/Angular Forms</h3>
+
+<!-- Banana Syntax -->
+
+<!-- ngModel => FormsModule altından gelir.. -->
+<input [(ngModel)]="address" placeholder="Adres" type="text" />
+
+<p>Adres: {{ address }}</p>
+
+<hr />
+
+<h3>Çalışma</h3>
+
+<div>
+  <label>Enter To-Do: </label>
+  <input [(ngModel)]="toDo" type="text" placeholder="To-Do" />
+</div>
+<button (click)="addToDo()">Add</button>
+
+<div>
+  <p *ngIf="toDoList.length <= 0">No elements in list.</p>
+  <ul *ngIf="toDoList.length > 0">
+    <li *ngFor="let todo of toDoList">
+      {{ todo }}
+      <button (click)="removeFromList(todo)">X</button>
+    </li>
+  </ul>
+</div>
+
+<hr />
+<h3>Sepetteki Ürün Sayısı: {{ cartItems }}</h3>
+<app-example (onBtnPress)="increase()" title="Ürün 1"></app-example>
+<app-example (onBtnPress)="increase()" title="Ürün 2"></app-example>
+<app-example (onBtnPress)="increase()" title="Ürün 3"></app-example>
