@@ -11,4 +11,14 @@ export class AppComponent {
   title = 'etiya-fs-2';
   private title2 = 'etiya-fs-2'; // html tarafından dahil erişilemez
   students = ['Halit', 'Ozan', 'Murat', 'Musa', 'Merve', 'Emine'];
+  name: string = '1234';
+
+  changeName(event: any) {
+    let newValue = event.target.value;
+    this.name = newValue;
+  }
+
+  changeNameBtn() {
+    this.name = 'Butondan değiştirildi';
+  }
 }

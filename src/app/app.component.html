@@ -20,3 +20,18 @@
 <!-- *ngIf => elementin render edilip edilmemsini bir koşula bağlayan direktif  -->
 
 <hr />
+
+<h3>Two Way Data Binding</h3>
+
+<label>İsim: </label>
+<!-- [] => angular attributes -->
+<!-- () => angular events -->
+<!-- $event => angularda yapılan işlemin detaylarını içeren rezerve parametre -->
+<input disabled type="text" [value]="name" (keyup)="changeName($event)" />
+<!-- change => inputun değeri değişti ve kullanıcı inputu terketti -->
+<!-- keyup => input içerisinde bir klavye tuşuna basıldı -->
+<p>Şuanki isim değeri: {{ name }}</p>
+
+<button (click)="changeNameBtn()">Değeri Değiştir</button>
+
+<hr />
