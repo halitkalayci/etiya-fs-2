@@ -15,5 +15,12 @@ export class PostService {
     );
   }
   getById(id: number) {}
+
+  add(request: any) {
+    return this.httpClient.post(
+      'https://jsonplaceholder.typicode.com/posts',
+      request
+    );
+  }
 }
 // 11:00

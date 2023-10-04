@@ -9,6 +9,10 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class AddPostComponent implements OnInit {
   users: GetAllUserModel[] = [];
+
+  title: string = '';
+  body: string = '';
+  userId: number = 0;
   constructor(
     private userService: UserService,
     private postService: PostService
@@ -20,5 +24,13 @@ export class AddPostComponent implements OnInit {
     this.userService.getAll().subscribe((response) => {
       this.users = response;
     });
+  }
+
+  submit() {
+    let request = { title: this.title, body: this.body, userId: this.userId };
+    console.log(request);
+    this.postService
+      .add(request)
+      .subscribe((response) => console.log(response));
   }
 }
