@@ -10,6 +10,7 @@ import { CssWorkshopComponent } from './pages/css-workshop/css-workshop.componen
 import { FirstWorkshopComponent } from './pages/first-workshop/first-workshop.component';
 import { PostListComponent } from './pages/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddPostComponent } from './pages/add-post/add-post.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     CssWorkshopComponent,
     FirstWorkshopComponent,
     PostListComponent,
+    AddPostComponent,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule], // Bu modülün dışarıdan temin ettiği diğer modüller
   providers: [], // Dependency Injection

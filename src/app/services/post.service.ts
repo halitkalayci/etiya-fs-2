@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GetAllPostModel } from '../models/post/GetAllPostModel';
+import { GetAllPostModel } from '../models/post/getAllPostModel';
 
 @Injectable({
   providedIn: 'root',
@@ -16,3 +16,4 @@ export class PostService {
   }
   getById(id: number) {}
 }
+// 11:00
