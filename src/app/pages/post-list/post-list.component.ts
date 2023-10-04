@@ -1,12 +1,13 @@
 import { AfterContentInit, Component, OnChanges, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PostService } from 'src/app/services/post.service';
 @Component({
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.css'],
 })
 export class PostListComponent implements OnInit, AfterContentInit, OnChanges {
   //Angular-TS tarafında dependency injection nasıl yapılır?
-  constructor(private httpClient: HttpClient) {}
+  constructor(private postService: PostService) {}
 
   //angular hooks
   ngOnChanges() {
@@ -15,16 +16,12 @@ export class PostListComponent implements OnInit, AfterContentInit, OnChanges {
   ngOnInit(): void {
     this.fetchPosts();
   }
-  ngAfterContentInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngAfterContentInit(): void {}
   //
-
+  //
   fetchPosts() {
-    this.httpClient
-      .get('https://jsonplaceholder.typicode.com/posts')
-      .subscribe((response) => {
-        console.log(response);
-      });
+    this.postService.getAll().subscribe((response) => {
+      console.log(response);
+    });
   }
 }
