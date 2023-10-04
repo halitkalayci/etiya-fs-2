@@ -12,11 +12,9 @@
             deneme: false,
           }"
         />
-        <span
-          *ngIf="hasValidationError('title', 'required')"
-          class="text-danger"
-          >Bu alan zorunludur.</span
-        >
+        <app-input-error
+          [control]="addForm.controls['title']"
+        ></app-input-error>
       </div>
       <div class="form-group">
         <label>Body</label>
@@ -30,9 +28,7 @@
             deneme: false,
           }"
         ></textarea>
-        <span *ngIf="hasValidationError('body', 'required')" class="text-danger"
-          >Bu alan zorunludur.</span
-        >
+        <app-input-error [control]="addForm.controls['body']"></app-input-error>
       </div>
       <div class="form-group">
         <label>User</label>

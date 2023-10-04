@@ -33,8 +33,15 @@ export class AddPostComponent implements OnInit {
 
   buildForm() {
     this.addForm = this.formBuilder.group({
-      title: new FormControl('', [Validators.required]),
-      body: new FormControl('', [Validators.required]),
+      title: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5),
+      ]),
+      body: new FormControl('', [
+        Validators.required,
+        Validators.minLength(15),
+        Validators.maxLength(20),
+      ]),
       userId: new FormControl(0, [Validators.min(1)]),
     });
   }

@@ -11,6 +11,7 @@ import { FirstWorkshopComponent } from './pages/first-workshop/first-workshop.co
 import { PostListComponent } from './pages/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './pages/add-post/add-post.component';
+import { InputErrorComponent } from './components/input-error/input-error.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AddPostComponent } from './pages/add-post/add-post.component';
     FirstWorkshopComponent,
     PostListComponent,
     AddPostComponent,
+    InputErrorComponent,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,
