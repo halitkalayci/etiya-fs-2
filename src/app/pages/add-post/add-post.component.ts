@@ -52,17 +52,6 @@ export class AddPostComponent implements OnInit {
     });
   }
 
-  hasValidationError(controlName: string, errorType: string) {
-    if (
-      this.addForm.controls[controlName].touched &&
-      this.addForm.controls[controlName].errors != null &&
-      this.addForm.controls[controlName].getError(errorType) != null
-    ) {
-      return true;
-    }
-    return false;
-  }
-
   hasAnyError(controlName: string) {
     return (
       this.addForm.controls[controlName].touched &&
