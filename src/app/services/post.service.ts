@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { GetAllPostModel } from '../models/post/GetAllPostModel';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +9,10 @@ import { Observable } from 'rxjs';
 export class PostService {
   constructor(private httpClient: HttpClient) {}
 
-  getAll(): Observable<any> {
-    return this.httpClient.get('https://jsonplaceholder.typicode.com/posts');
+  getAll(): Observable<GetAllPostModel[]> {
+    return this.httpClient.get<GetAllPostModel[]>(
+      'https://jsonplaceholder.typicode.com/posts'
+    );
   }
   getById(id: number) {}
 }
