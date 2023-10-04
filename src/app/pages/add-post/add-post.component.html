@@ -3,7 +3,15 @@
     <form [formGroup]="addForm">
       <div class="form-group">
         <label>Title</label>
-        <input formControlName="title" type="text" class="form-control" />
+        <input
+          formControlName="title"
+          type="text"
+          class="form-control"
+          [ngClass]="{
+            'is-invalid': hasAnyError('title'),
+            deneme: false,
+          }"
+        />
         <span
           *ngIf="hasValidationError('title', 'required')"
           class="text-danger"
@@ -17,6 +25,10 @@
           rows="5"
           type="text"
           class="form-control"
+          [ngClass]="{
+            'is-invalid': hasAnyError('body'),
+            deneme: false,
+          }"
         ></textarea>
         <span *ngIf="hasValidationError('body', 'required')" class="text-danger"
           >Bu alan zorunludur.</span

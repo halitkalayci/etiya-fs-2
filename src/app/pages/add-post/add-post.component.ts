@@ -56,6 +56,13 @@ export class AddPostComponent implements OnInit {
     return false;
   }
 
+  hasAnyError(controlName: string) {
+    return (
+      this.addForm.controls[controlName].touched &&
+      this.addForm.controls[controlName].errors != null
+    );
+  }
+
   submit() {
     this.addForm.markAllAsTouched();
     if (this.addForm.invalid) {
