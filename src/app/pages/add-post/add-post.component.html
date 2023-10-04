@@ -1,28 +1,30 @@
 <div class="d-flex justify-content-center align-items-center h-full">
   <div>
-    <form>
+    <form [formGroup]="addForm">
       <div class="form-group">
         <label>Title</label>
-        <input
-          name="title"
-          [(ngModel)]="title"
-          type="text"
-          class="form-control"
-        />
+        <input formControlName="title" type="text" class="form-control" />
+        <span
+          *ngIf="hasValidationError('title', 'required')"
+          class="text-danger"
+          >Bu alan zorunludur.</span
+        >
       </div>
       <div class="form-group">
         <label>Body</label>
         <textarea
-          name="body"
-          [(ngModel)]="body"
+          formControlName="body"
           rows="5"
           type="text"
           class="form-control"
         ></textarea>
+        <span *ngIf="hasValidationError('body', 'required')" class="text-danger"
+          >Bu alan zorunludur.</span
+        >
       </div>
       <div class="form-group">
         <label>User</label>
-        <select name="userId" [(ngModel)]="userId" class="form-select">
+        <select formControlName="userId" class="form-select">
           <option *ngFor="let user of users" [value]="user.id">
             {{ user.username }}
           </option>
