@@ -15,6 +15,7 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
 import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { OverlayLoaderComponent } from './components/overlay-loader/overlay-loader.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     InputErrorComponent,
     PostDetailComponent,
     NotFoundComponent,
+    OverlayLoaderComponent,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,
