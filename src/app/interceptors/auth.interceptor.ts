@@ -15,7 +15,11 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    console.log('Http isteği atıldı..');
-    return next.handle(request);
+    let newRequest = request.clone({
+      setHeaders: {
+        Authorization: 'Bearer etiya',
+      },
+    });
+    return next.handle(newRequest);
   }
 }
