@@ -4,12 +4,14 @@ import { CssWorkshopComponent } from './pages/css-workshop/css-workshop.componen
 import { FirstWorkshopComponent } from './pages/first-workshop/first-workshop.component';
 import { PostListComponent } from './pages/post-list/post-list.component';
 import { AddPostComponent } from './pages/add-post/add-post.component';
+import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 
 const routes: Routes = [
   { path: '', component: FirstWorkshopComponent },
   { path: 'css', component: CssWorkshopComponent },
   { path: 'posts', component: PostListComponent },
   { path: 'add-post', component: AddPostComponent },
+  { path: 'post-detail', component: PostDetailComponent },
 ]; // hangi url hangi sayfayı aktif edecek konfigürasyonu
 
 @NgModule({

@@ -1,1 +1,14 @@
-<p>post-list works!</p>
+<div class="container text-center">
+  <ul>
+    <li *ngFor="let post of postList">
+      <!-- Angular içerisinde uygulama içi link verilirken HREF kullanımı yasak. (SPA kullanıma uygun değil) -->
+      <!-- routerLink -->
+
+      <!-- linksonu?id=1&x=2&y=merhaba -->
+      <!-- linksonu/param1/param2 -->
+      <a routerLink="/post-detail" [queryParams]="{ id: post.id }">{{
+        post.title
+      }}</a>
+    </li>
+  </ul>
+</div>

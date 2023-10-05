@@ -12,6 +12,7 @@ import { PostListComponent } from './pages/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './pages/add-post/add-post.component';
 import { InputErrorComponent } from './components/input-error/input-error.component';
+import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
     PostListComponent,
     AddPostComponent,
     InputErrorComponent,
+    PostDetailComponent,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,
