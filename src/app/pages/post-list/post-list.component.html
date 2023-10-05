@@ -6,9 +6,7 @@
 
       <!-- linksonu?id=1&x=2&y=merhaba -->
       <!-- linksonu/param1/param2 -->
-      <a routerLink="/post-detail" [queryParams]="{ id: post.id }">{{
-        post.title
-      }}</a>
+      <a [routerLink]="'/post-detail/' + post.id">{{ post.title }}</a>
     </li>
   </ul>
 </div>
