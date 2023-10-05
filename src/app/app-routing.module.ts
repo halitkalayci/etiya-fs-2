@@ -8,10 +8,15 @@ import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { authGuard } from './guards/auth.guard';
 
+// debugging
 const routes: Routes = [
   { path: '', component: FirstWorkshopComponent },
   { path: 'css', component: CssWorkshopComponent },
-  { path: 'posts', component: PostListComponent, canActivate: [authGuard] },
+  {
+    path: 'posts',
+    component: PostListComponent,
+    canActivate: [authGuard],
+  },
   { path: 'add-post', component: AddPostComponent },
   { path: 'post-detail/:id', component: PostDetailComponent },
   { path: '**', component: NotFoundComponent },
