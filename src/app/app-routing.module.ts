@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'css', component: CssWorkshopComponent },
   { path: 'posts', component: PostListComponent },
   { path: 'add-post', component: AddPostComponent },
-  { path: 'post-detail', component: PostDetailComponent },
+  { path: 'post-detail/:id', component: PostDetailComponent },
 ]; // hangi url hangi sayfayı aktif edecek konfigürasyonu
 
 @NgModule({
