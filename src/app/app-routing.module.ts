@@ -5,6 +5,7 @@ import { FirstWorkshopComponent } from './pages/first-workshop/first-workshop.co
 import { PostListComponent } from './pages/post-list/post-list.component';
 import { AddPostComponent } from './pages/add-post/add-post.component';
 import { PostDetailComponent } from './pages/post-detail/post-detail.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: FirstWorkshopComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'posts', component: PostListComponent },
   { path: 'add-post', component: AddPostComponent },
   { path: 'post-detail/:id', component: PostDetailComponent },
+  { path: '**', component: NotFoundComponent },
 ]; // hangi url hangi sayfayı aktif edecek konfigürasyonu
 
 @NgModule({

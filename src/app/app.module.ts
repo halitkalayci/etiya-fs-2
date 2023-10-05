@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './pages/add-post/add-post.component';
 import { InputErrorComponent } from './components/input-error/input-error.component';
 import { PostDetailComponent } from './pages/post-detail/post-detail.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PostDetailComponent } from './pages/post-detail/post-detail.component';
     AddPostComponent,
     InputErrorComponent,
     PostDetailComponent,
+    NotFoundComponent,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,
