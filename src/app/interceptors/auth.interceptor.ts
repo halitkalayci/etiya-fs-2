@@ -5,7 +5,7 @@ import {
   HttpEvent,
   HttpInterceptor,
 } from '@angular/common/http';
-import { Observable, finalize } from 'rxjs';
+import { Observable, catchError, finalize, retry, tap } from 'rxjs';
 import { LoadingService } from '../services/loading.service';
 
 @Injectable()
@@ -25,7 +25,16 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(newRequest).pipe(
       finalize(() => {
         this.loadingService.stopLoading();
-      })
+      }),
+      catchError((err) => {
+        console.log('Interceptordan yakalanan hata:', err);
+        throw err;
+      }),
+      tap((next) => {
+        console.log(next);
+      }),
+      retry(2)
+      // rxjs operatorleri
     );
   }
 }
