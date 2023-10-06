@@ -1,14 +1,18 @@
 <div class="container text-center">
+  <input
+    [(ngModel)]="searchText"
+    type="text"
+    class="form-control"
+    placeholder="Ara.."
+  />
   <ul>
-    <li *ngFor="let post of postList">
+    <li *ngFor="let post of postList | searchPost : searchText">
       <!-- Angular içerisinde uygulama içi link verilirken HREF kullanımı yasak. (SPA kullanıma uygun değil) -->
       <!-- routerLink -->
 
       <!-- linksonu?id=1&x=2&y=merhaba -->
       <!-- linksonu/param1/param2 -->
       <!-- alt gr + T -->
-      <p>{{ today | date : "dd/MM/yyyy hh:mm" }}</p>
-      <p>{{ 45 | currency : "₺" }}</p>
       <a [routerLink]="'/post-detail/' + post.id">{{ post.title }} </a>
     </li>
   </ul>

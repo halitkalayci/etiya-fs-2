@@ -10,6 +10,7 @@ import { LoadingService } from 'src/app/services/loading.service';
 export class PostListComponent implements OnInit {
   postList!: GetAllPostModel[];
   today: Date = new Date();
+  searchText: string = '';
   //Angular-TS tarafında dependency injection nasıl yapılır?
   constructor(
     private postService: PostService,
