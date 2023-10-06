@@ -21,6 +21,9 @@ import { KdvPipe } from './pipes/kdv.pipe';
 import { SearchPostPipe } from './pipes/search-post.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { IfNotDirective } from './directives/if-not.directive';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { sharedReducers } from './store/shared.reducers';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,8 @@ import { IfNotDirective } from './directives/if-not.directive';
         tokenGetter: () => localStorage.getItem('token'),
       },
     }),
+    StoreModule.forRoot(sharedReducers),
+    StoreDevtoolsModule.instrument(),
   ], // Bu modülün dışarıdan temin ettiği diğer modüller
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
