@@ -17,6 +17,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { OverlayLoaderComponent } from './components/overlay-loader/overlay-loader.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { KdvPipe } from './pipes/kdv.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     PostDetailComponent,
     NotFoundComponent,
     OverlayLoaderComponent,
+    KdvPipe,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,

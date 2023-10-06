@@ -1,6 +1,7 @@
 <div *ngIf="post" class="container">
   <h3>{{ post.title }}</h3>
   <p>{{ post.body }}</p>
-  <p>{{ 45 | currency : "₺" }}</p>
+  <p>{{ 50 | currency : "₺" }}</p>
+  <p>{{ 50 | kdv }}</p>
   <small>User Id: {{ post.userId }}</small>
 </div>
