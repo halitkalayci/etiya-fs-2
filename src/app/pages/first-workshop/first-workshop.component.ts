@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { login } from 'src/app/store/auth/auth.actions';
+import { SharedState } from 'src/app/store/shared.reducers';
 
 @Component({
   templateUrl: './first-workshop.component.html',
@@ -13,6 +16,13 @@ export class FirstWorkshopComponent {
   toDoList: string[] = [];
   toDo: string = '';
   cartItems: number = 0;
+
+  constructor(private store: Store<SharedState>) {}
+
+  loginSimulation() {
+    // bir aksiyonu triggerlamak
+    this.store.dispatch(login({ id: 1, username: 'halit' }));
+  }
 
   addToDo() {
     this.toDoList.push(this.toDo);

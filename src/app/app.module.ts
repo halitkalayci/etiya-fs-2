@@ -24,6 +24,7 @@ import { IfNotDirective } from './directives/if-not.directive';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { sharedReducers } from './store/shared.reducers';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { sharedReducers } from './store/shared.reducers';
     SearchPostPipe,
     HighlightDirective,
     IfNotDirective,
+    NavbarComponent,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,
