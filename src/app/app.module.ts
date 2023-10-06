@@ -20,6 +20,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { KdvPipe } from './pipes/kdv.pipe';
 import { SearchPostPipe } from './pipes/search-post.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { IfNotDirective } from './directives/if-not.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     KdvPipe,
     SearchPostPipe,
     HighlightDirective,
+    IfNotDirective,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,

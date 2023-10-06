@@ -1,5 +1,5 @@
 <hr />
-<h3 [appHighlight]="'red'" [permanent]="true">
+<h3 *ngIfNot="false" [appHighlight]="'red'" [permanent]="true">
   TS / HTML Bağlantısı ve Directiveler
 </h3>
 <p appHighlight="gray">Etiya</p>
@@ -60,10 +60,13 @@
 <div>
   <p *ngIf="toDoList.length <= 0">No elements in list.</p>
   <ul *ngIf="toDoList.length > 0">
+    <!-- ViewContainer -->
+    <!-- Template Başlangıç -->
     <li *ngFor="let todo of toDoList">
       {{ todo }}
       <button (click)="removeFromList(todo)">X</button>
     </li>
+    <!-- Template Bitiş -->
   </ul>
 </div>
 
