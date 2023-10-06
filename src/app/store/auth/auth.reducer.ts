@@ -16,6 +16,14 @@ export const authReducer = createReducer(
   // state => deponun o anki durumu
   // action => login aksiyonu fırlatıldığında verilen propsların değerleri
   on(login, (state, action) => {
+    // State is immutable => read-only
+    // state.isAuthenticated = true;
+    // state.user = { id: action.id, username: action.username };
+    // return state;
+
+    // state.cartItems []
+    // quantity += 1
+
     return {
       isAuthenticated: true,
       user: { id: action.id, username: action.username },
