@@ -16,3 +16,10 @@ export const authGuard: CanActivateFn = (route, state) => {
 };
 // angular < 16 => Guard Class
 // angular > 16 => Fn
+
+// role
+
+// pipes => Built-in Pipes - Custom Pipes
+// directives
+// ngRx => Angular Redux => global state management
+// backend development

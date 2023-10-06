@@ -6,7 +6,10 @@
 
       <!-- linksonu?id=1&x=2&y=merhaba -->
       <!-- linksonu/param1/param2 -->
-      <a [routerLink]="'/post-detail/' + post.id">{{ post.title }}</a>
+      <!-- alt gr + T -->
+      <p>{{ today | date : "dd/MM/yyyy hh:mm" }}</p>
+      <p>{{ 45 | currency : "₺" }}</p>
+      <a [routerLink]="'/post-detail/' + post.id">{{ post.title }} </a>
     </li>
   </ul>
 </div>
