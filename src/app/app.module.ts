@@ -19,6 +19,7 @@ import { OverlayLoaderComponent } from './components/overlay-loader/overlay-load
 import { JwtModule } from '@auth0/angular-jwt';
 import { KdvPipe } from './pipes/kdv.pipe';
 import { SearchPostPipe } from './pipes/search-post.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SearchPostPipe } from './pipes/search-post.pipe';
     OverlayLoaderComponent,
     KdvPipe,
     SearchPostPipe,
+    HighlightDirective,
   ], // Bu modül (proje) içerisinde tanımlanan işlevler, modülün içerisinde barındırdığı schematicler
   imports: [
     BrowserModule,

@@ -1,8 +1,10 @@
 <hr />
-<h3>TS / HTML Bağlantısı ve Directiveler</h3>
-<p>Etiya</p>
+<h3 [appHighlight]="'red'" [permanent]="true">
+  TS / HTML Bağlantısı ve Directiveler
+</h3>
+<p appHighlight="gray">Etiya</p>
 <!-- HTML içerisinde TS kodu execute etmemiz gerektiğinde {{ ts_kodu }} -->
-<p>{{ 1 + 1 }}</p>
+<p appHighlight="yellow">{{ 1 + 1 }}</p>
 <p>1+1</p>
 
 <p>{{ title }}</p>
