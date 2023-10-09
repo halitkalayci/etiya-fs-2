@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { GetAllUserModel } from 'src/app/models/user/getAllUserModel';
 import { PostService } from 'src/app/services/post.service';
+import { ProductService } from 'src/app/services/product.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -24,9 +25,11 @@ export class AddPostComponent implements OnInit {
   constructor(
     private userService: UserService,
     private postService: PostService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private productService: ProductService
   ) {}
   ngOnInit(): void {
+    this.productService.getAll().subscribe((response) => {});
     this.buildForm();
     this.fetchUsers();
   }
